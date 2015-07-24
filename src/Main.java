@@ -14,8 +14,8 @@ import com.sun.jersey.core.util.Base64;
 
 
 public class Main {
-//	public static final String baseUrl = "http://192.168.0.222:8080/chuang/";
-	public static final String baseUrl = "http://121.40.177.251:8810/";
+	public static final String baseUrl = "http://192.168.0.222:8080/chuang/";
+//	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
 	public static void main(String[] args) throws  Exception {
 		
@@ -81,10 +81,26 @@ public class Main {
 		//买家删除订单
 //		System.out.println(orderDelete());
 		//安装统计
-		System.out.println(installCount());
+//		System.out.println(installCount());
 		//首页城市
 //		System.out.println(indexCity());
+		//铝材零售
+//		System.out.println(lvcaiFenleiList());
 	}
+	
+	/**
+	 * 首页城市配置
+	 * @return
+	 * @throws Exception
+	 */
+	private static String lvcaiFenleiList() throws Exception {
+		String urlString = "baba/lvcaiFenleiList.do";
+		 
+		HttpPost hp = new HttpPost(new URL(baseUrl+urlString));
+		
+		return hp.getResult();
+	}
+	
 	/**
 	 * 首页城市配置
 	 * @return
