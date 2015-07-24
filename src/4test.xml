@@ -1,0 +1,43 @@
+<request><!-- 目前仅接受票价相同的改签 票价有差异的改签需走其他方式 -->
+	<dotype>alterTickets</dotype>
+	<requestflow>1234567890</requestflow><!-- 商户改签请求流水 -->
+	<ticketOrderId>1234567890</ticketOrderId><!-- 订票流水 -->
+	<tickets>
+		<ticket><!-- 循环域 每张改签必须单独一个标签 -->
+			<cardno></cardno> <!-- 改签者的证件号码 -->
+			<name></name>	<!-- 改签者的姓名 -->
+			<ticketNewInfo>	<!-- 改签至车次的信息 -->
+				<from_station_name>哈尔滨</from_station_name>
+				<to_station_name>哈尔滨东</to_station_name>
+				<station_train_code>K7018</station_train_code>
+				<starttime>06:10</starttime>
+				<arrive_time>06:42</arrive_time>
+				<date>2015-05-05</date>
+				<seat>座位类型</seat>
+				<ticket>票类型(儿童票或成人票)</ticket>
+			</ticketNewInfo>
+		</ticket>
+		<ticket><!-- 循环域 每张改签必须单独一个标签 -->
+			<cardno></cardno> <!-- 改签者的证件号码 -->
+			<name></name>	<!-- 改签者的姓名 -->
+			<ticketNewInfo>	<!-- 改签至车次的信息 -->
+				<from_station_name>哈尔滨</from_station_name>
+				<to_station_name>哈尔滨东</to_station_name>
+				<station_train_code>K7018</station_train_code>
+				<starttime>06:10</starttime>
+				<arrive_time>06:42</arrive_time>
+				<date>2015-05-05</date>
+				<seat>座位类型</seat>
+				<ticket>票类型(儿童票或成人票)</ticket>
+			</ticketNewInfo>
+		</ticket>
+	</tickets>
+</request>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+	<dotype>alterTickets</dotype>
+	<requestflow>1234567890</requestflow><!-- 商户改签请求流水 -->
+	<state>1</state>
+	<description></description>
+</response>
