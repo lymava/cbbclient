@@ -85,7 +85,7 @@ public class Main {
 		//首页城市
 //		System.out.println(indexCity());
 		//铝材零售 
-//		System.out.println(lvcaiFenleiList());
+		System.out.println(lvcaiFenleiList());
 	}
 	
 	/**
