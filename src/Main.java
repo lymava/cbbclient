@@ -125,19 +125,6 @@ public class Main {
     	json.addProperty("dailishangId", "55b5a1a9d6c4595eb279b2dc");
     	
     	json.addProperty("content", "评论内容!");
-    	//图片如果有就传 没有就不穿
-    	String picBase64 = getPicBase64("/home/lymava/下载/qqonline.png");
-
-		JsonArray ja = new JsonArray();
-		
-		JsonObject picPinglun = new JsonObject();
-		picPinglun.addProperty("pic", picBase64);
-		picPinglun.addProperty("memo", "照片描述");
-		
-		ja.add(picPinglun);;
-		
-    	
-    	json.add("pics", ja);
 		
 		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
 		return request_data;
