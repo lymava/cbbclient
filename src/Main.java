@@ -101,6 +101,10 @@ public class Main {
 		HttpPost hp = new HttpPost(new URL(baseUrl+urlString));
 		//代理商的id
 		hp.addParemeter("dailishangId", "55b5a1a9d6c4595eb279b2dc");
+		//页数
+		hp.addParemeter("page", "1");
+		//每页个数
+		hp.addParemeter("pageSize", "15");
 		
 		return hp.getResult();
 	}
@@ -119,11 +123,9 @@ public class Main {
     	String name = "18983261955"; 
     	
     	JsonObject json = new JsonObject();
-    	//用户id
-    	json.addProperty("userId", "557ea3b6d812a83241824cc2");
     	//代理商ID
     	json.addProperty("dailishangId", "55b5a1a9d6c4595eb279b2dc");
-    	
+    	json.addProperty("name", "评论标题!");
     	json.addProperty("content", "评论内容!");
 		
 		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
