@@ -163,6 +163,8 @@ public class Main {
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		//推荐专卖店
 		hp.addParemeter("tuijian", "yes");
+		//首页根据城市搜索推荐
+		hp.addParemeter("city", "重庆");
 		//页数
 		hp.addParemeter("page", "1");
 		//每页个数
