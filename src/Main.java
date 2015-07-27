@@ -85,7 +85,62 @@ public class Main {
 		//首页城市
 //		System.out.println(indexCity());
 		//铝材零售 
-		System.out.println(lvcaiFenleiList());
+//		System.out.println(lvcaiFenleiList());
+		//用户评论代理商
+		System.out.println(userPinglunDailishang());
+	}
+	
+	/**
+	 * 代理商被评论的列表
+	 * @return
+	 * @throws Exception
+	 */
+	private static String getPinglunDailishang() throws Exception {
+		String urlString = "baba/getPinglunDailishang.do";
+		 
+		HttpPost hp = new HttpPost(new URL(baseUrl+urlString));
+		//代理商的id
+		hp.addParemeter("dailishangId", "55b5a1a9d6c4595eb279b2dc");
+		
+		return hp.getResult();
+	}
+	
+	/**
+	 * 用户评论代理商
+	 * @return
+	 * @throws Exception
+	 */
+	private static String userPinglunDailishang() throws Exception {
+		String urlString = baseUrl+"face/userfront/userPinglunDailishang.do";
+		
+		//用户密钥
+		String key = "a1291d896eb54f0412e155b0";
+		//用户名
+    	String name = "18983261955"; 
+    	
+    	JsonObject json = new JsonObject();
+    	//用户id
+    	json.addProperty("userId", "557ea3b6d812a83241824cc2");
+    	//代理商ID
+    	json.addProperty("dailishangId", "55b5a1a9d6c4595eb279b2dc");
+    	
+    	json.addProperty("content", "评论内容!");
+    	//图片如果有就传 没有就不穿
+    	String picBase64 = getPicBase64("/home/lymava/下载/qqonline.png");
+
+		JsonArray ja = new JsonArray();
+		
+		JsonObject picPinglun = new JsonObject();
+		picPinglun.addProperty("pic", picBase64);
+		picPinglun.addProperty("memo", "照片描述");
+		
+		ja.add(picPinglun);;
+		
+    	
+    	json.add("pics", ja);
+		
+		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+		return request_data;
 	}
 	
 	/**
@@ -412,7 +467,7 @@ public class Main {
 	 */
 	public static final Integer order_STATE_false = 4;
 	/**
-	 * 回答
+	 * 创建订单接口
 	 * @return
 	 * @throws Exception
 	 */
@@ -428,9 +483,30 @@ public class Main {
     	
     	String orderId = (""+System.currentTimeMillis()).substring(1);
     	String productId = "55463490d105fc1e93208b16";
+    	/**
+    	 * 门窗
+    	 */
+    	String fangdaoshachuang = "门";
+    	/**
+    	 * 铝材表面颜色
+    	 */
+    	 String biaomian="红酸枝" ;
+    	/**
+    	 * 玻璃规格
+    	 */
+    	 String guige ="5+9+5";
+    	/**
+    	 * 玻璃材质
+    	 */
+    	 String caizhi ="普通钢化";
     	
     	json.addProperty("orderId", orderId);
     	json.addProperty("productId", productId);
+    	json.addProperty("fangdaoshachuang", fangdaoshachuang);
+    	json.addProperty("biaomian", biaomian);
+    	json.addProperty("guige", guige);
+    	json.addProperty("caizhi", caizhi); 
+    
 		
 		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
 		return request_data;
