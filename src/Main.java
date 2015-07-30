@@ -14,8 +14,8 @@ import com.sun.jersey.core.util.Base64;
 
 
 public class Main {
-//	public static final String baseUrl = "http://localhost:8080/chuang/";
-	public static final String baseUrl = "http://121.40.177.251:8810/";
+	public static final String baseUrl = "http://localhost:8080/chuang/";
+//	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
 	public static void main(String[] args) throws  Exception {
 		
@@ -89,9 +89,31 @@ public class Main {
 		//用户评论代理商
 //		System.out.println(userPinglunDailishang());
 		//代理商创意发布
-		System.out.println(userFabuchuang());
+//		System.out.println(userFabuchuang());
+		//我的创意列表
+		System.out.println(chuangyilist());
 	}
-	
+	/**
+	 * 我的创意列表
+	 * @return
+	 * @throws Exception
+	 */
+	private static String chuangyilist() throws Exception {
+		String urlString = baseUrl+"face/userfront/chuangyilist.do";
+		
+		//用户密钥
+		String key = "9cc61558bc03343d63b8c5a9";
+		//用户名
+    	String name = "MY0000"; 
+    	
+    	JsonObject json = new JsonObject();
+    	//代理商ID
+    	json.addProperty("page", "1");
+    	json.addProperty("pageSize", "1");
+		
+		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+		return request_data;
+	}
 	/**
 	 * 代理商创意发布
 	 * @return
@@ -101,14 +123,14 @@ public class Main {
 		String urlString = baseUrl+"face/userfront/chuangyifabu.do";
 		
 		//用户密钥
-		String key = "2204bc9025a14f6d8d3cab39";
+		String key = "9cc61558bc03343d63b8c5a9";
 		//用户名
     	String name = "MY0000"; 
     	
     	JsonObject json = new JsonObject();
     	//代理商ID
-    	json.addProperty("name", "创意标题!");
-    	json.addProperty("content", "创意内容!");
+    	json.addProperty("name", "创意标题2!");
+    	json.addProperty("content", "创意内容3!");
 		
 		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
 		return request_data;
