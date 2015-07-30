@@ -14,8 +14,8 @@ import com.sun.jersey.core.util.Base64;
 
 
 public class Main {
-	public static final String baseUrl = "http://192.168.0.222:8080/chuang/";
-//	public static final String baseUrl = "http://121.40.177.251:8810/";
+//	public static final String baseUrl = "http://localhost:8080/chuang/";
+	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
 	public static void main(String[] args) throws  Exception {
 		
@@ -87,7 +87,31 @@ public class Main {
 		//铝材零售 
 //		System.out.println(lvcaiFenleiList());
 		//用户评论代理商
-		System.out.println(userPinglunDailishang());
+//		System.out.println(userPinglunDailishang());
+		//代理商创意发布
+		System.out.println(userFabuchuang());
+	}
+	
+	/**
+	 * 代理商创意发布
+	 * @return
+	 * @throws Exception
+	 */
+	private static String userFabuchuang() throws Exception {
+		String urlString = baseUrl+"face/userfront/chuangyifabu.do";
+		
+		//用户密钥
+		String key = "2204bc9025a14f6d8d3cab39";
+		//用户名
+    	String name = "MY0000"; 
+    	
+    	JsonObject json = new JsonObject();
+    	//代理商ID
+    	json.addProperty("name", "创意标题!");
+    	json.addProperty("content", "创意内容!");
+		
+		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+		return request_data;
 	}
 	
 	/**
@@ -118,13 +142,13 @@ public class Main {
 		String urlString = baseUrl+"face/userfront/userPinglunDailishang.do";
 		
 		//用户密钥
-		String key = "a1291d896eb54f0412e155b0";
+		String key = "d330a2dafd22439ca5b8babe";
 		//用户名
-    	String name = "18983261955"; 
+    	String name = "15922520075"; 
     	
     	JsonObject json = new JsonObject();
     	//代理商ID
-    	json.addProperty("dailishangId", "55b5a1a9d6c4595eb279b2dc");
+    	json.addProperty("dailishangId", "55b1b073d6c459501b581c15");
     	json.addProperty("name", "评论标题!");
     	json.addProperty("content", "评论内容!");
 		
@@ -859,7 +883,7 @@ public class Main {
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
-		hp.addParemeter("fenleiid", "5540a368d812a83f8eed3c7c");
+		hp.addParemeter("fenleiid", "55b1f33fd6c459501b581c23");
 		
 		
 		return hp.getResult();
