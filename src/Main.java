@@ -75,7 +75,7 @@ public class Main {
 		//我的提问列表
 //		System.out.println(mytiwenList());
 		//代理商展示
-//		System.out.println(dailishangList());
+		System.out.println(dailishangList());
 		//代理商推荐
 //		System.out.println(dailishangList_tuijian());
 		//买家删除订单
@@ -91,29 +91,29 @@ public class Main {
 		//代理商创意发布
 //		System.out.println(userFabuchuang());
 		//我的创意列表
-		System.out.println(chuangyilist());
+//		System.out.println(chuangyilist());
 	}
-	/**
-	 * 我的创意列表
-	 * @return
-	 * @throws Exception
-	 */
-	private static String chuangyilist() throws Exception {
-		String urlString = baseUrl+"face/userfront/chuangyilist.do";
-		
-		//用户密钥
-		String key = "9cc61558bc03343d63b8c5a9";
-		//用户名
-    	String name = "MY0000"; 
-    	
-    	JsonObject json = new JsonObject();
-    	//代理商ID
-    	json.addProperty("page", "1");
-    	json.addProperty("pageSize", "1");
-		
-		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
-		return request_data;
-	}
+//	/**
+//	 * 我的创意列表
+//	 * @return
+//	 * @throws Exception
+//	 */
+//	private static String chuangyilist() throws Exception {
+//		String urlString = baseUrl+"face/userfront/chuangyilist.do";
+//		
+//		//用户密钥
+//		String key = "9cc61558bc03343d63b8c5a9";
+//		//用户名
+//    	String name = "MY0000"; 
+//    	
+//    	JsonObject json = new JsonObject();
+//    	//代理商ID
+//    	json.addProperty("page", "1");
+//    	json.addProperty("pageSize", "1");
+//		
+//		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+//		return request_data;
+//	}
 	/**
 	 * 代理商创意发布
 	 * @return
@@ -274,6 +274,7 @@ public class Main {
 		
 		hp.addParemeter("page", "1");
 		hp.addParemeter("pageSize", "4");
+//		hp.addParemeter("dailishangId", "55ae0a0bd6c45940a7575491");
 		
 		return hp.getResult();
 	}
@@ -435,6 +436,7 @@ public class Main {
 		String urlString = baseUrl+"face/userfront/list_daijinquan.do";
 		
 		String key = "633bd1f8db6fd7247249db5b";
+		//用户名
     	String name = "13896059237"; 
     	
     	JsonObject json = new JsonObject();
