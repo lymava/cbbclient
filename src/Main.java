@@ -22,6 +22,8 @@ public class Main {
 //		System.out.println(yuyue());
 		//加盟店获取自己的预约信息
 //		System.out.println(getMyYuyue()); 
+//		/删除预约
+		System.out.println(deleteMyYuyue());
 		//加盟店登录
 //		System.out.println(login());
 //		System.out.println(getShangpFenlei());
@@ -75,7 +77,7 @@ public class Main {
 		//我的提问列表
 //		System.out.println(mytiwenList());
 		//代理商展示
-		System.out.println(dailishangList());
+//		System.out.println(dailishangList());
 		//代理商推荐
 //		System.out.println(dailishangList_tuijian());
 		//买家删除订单
@@ -275,6 +277,7 @@ public class Main {
 		hp.addParemeter("page", "1");
 		hp.addParemeter("pageSize", "4");
 //		hp.addParemeter("dailishangId", "55ae0a0bd6c45940a7575491");
+		hp.addParemeter("tanzikou", "true");
 		
 		return hp.getResult();
 	}
@@ -858,7 +861,7 @@ public class Main {
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
-		hp.addParemeter("fenleiid", "554c93afd6c45923169ce948");
+		hp.addParemeter("fenleiid", "554c8ac9d6c45923169ce92c");
 		
 		
 		return hp.getResult();
@@ -913,15 +916,41 @@ public class Main {
 		return hp.getResult();
 	} 
 	
+	//预约中
+	public final static Integer state_yuyuezhong = 1;
+	//预约完成
+	public final static Integer state_finish = 2;
+	
 	public static String getMyYuyue() throws Exception{
 		String urlString = baseUrl+"face/userfront/getYuyueList.do";
 		
-		String key = "de3572e4391c92db60ad4ab4";
-    	String name = "新美鱼"; 
+		String key = "bb049bf2df1ad5fac09cc52f";
+    	String name = "13996237451"; 
     	
-    	String json = "{'page':'1','pageSize':'5'}";
+    	JsonObject json = new JsonObject();
+    	json.addProperty("page", "1");
+    	json.addProperty("pageSize", "5");
+    	json.addProperty("state", "1");
+    	
 		
-		String request_data =	BaseWebMain.request_data(urlString, key, name,json);
+		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+		return request_data;
+	}
+	
+	public static String deleteMyYuyue() throws Exception{
+		String urlString = baseUrl+"face/userfront/deleteYuyue.do";
+		
+		String key = "bb049bf2df1ad5fac09cc52f";
+    	String name = "13996237451"; 
+    	
+    	String yuyueId = "55eff964d812a81a715613c7";
+    	
+    	JsonObject json = new JsonObject();
+    	
+    	json.addProperty("yuyueId",yuyueId);
+    	
+		
+		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
 		return request_data;
 	}
 	
@@ -985,22 +1014,25 @@ public class Main {
 	 * @throws Exception
 	 */
 	public static String yuyue() throws  Exception{
-	
-		String url = "baba/yuyue.do";
+		String urlString = baseUrl+"face/userfront/yuyue.do";
 		
-		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		String key = "bb049bf2df1ad5fac09cc52f";
+    	String name = "13996237451"; 
+    	
+    	JsonObject json = new JsonObject();
+    	
+    	json.addProperty("yuyuePhone", "yuyuePhone");
+		json.addProperty("yuyueTime", "yuyueTime");
+		json.addProperty("tuijianrenPhone", "tuijianrenPhone");
+		json.addProperty("sheng", "sheng");
+		json.addProperty("shi", "shi");
+		json.addProperty("qu", "qu");
+		json.addProperty("message", "message");
+		json.addProperty("name", "name");
+		json.addProperty("orderId", (System.currentTimeMillis()+"").substring(1));
+    	
 		
-		hp.addParemeter("yuyuePhone", "yuyuePhone");
-		hp.addParemeter("yuyueTime", "yuyueTime");
-		hp.addParemeter("tuijianrenPhone", "tuijianrenPhone");
-		hp.addParemeter("sheng", "sheng");
-		hp.addParemeter("shi", "shi");
-		hp.addParemeter("qu", "qu");
-		hp.addParemeter("userId", "5550a272d6c4593921f15f77");
-		hp.addParemeter("message", "message");
-		hp.addParemeter("orderId", (System.currentTimeMillis()+"").substring(1));
-		
-		
-		return hp.getResult();
+		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+		return request_data;
 	}
 }
