@@ -14,16 +14,16 @@ import com.sun.jersey.core.util.Base64;
 
 
 public class Main {
-	public static final String baseUrl = "http://localhost:8080/chuang/";
-//	public static final String baseUrl = "http://121.40.177.251:8810/";
+//	public static final String baseUrl = "http://localhost:8080/chuang/";
+	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
 	public static void main(String[] args) throws  Exception {
 		
 //		System.out.println(yuyue());
 		//加盟店获取自己的预约信息
-//		System.out.println(getMyYuyue()); 
+		System.out.println(getMyYuyue()); 
 //		/删除预约
-		System.out.println(deleteMyYuyue());
+//		System.out.println(deleteMyYuyue());
 		//加盟店登录
 //		System.out.println(login());
 //		System.out.println(getShangpFenlei());
@@ -924,7 +924,7 @@ public class Main {
 	public static String getMyYuyue() throws Exception{
 		String urlString = baseUrl+"face/userfront/getYuyueList.do";
 		
-		String key = "bb049bf2df1ad5fac09cc52f";
+		String key = "fcd5848f3b42c7134cf6f48d";
     	String name = "13996237451"; 
     	
     	JsonObject json = new JsonObject();
@@ -940,10 +940,10 @@ public class Main {
 	public static String deleteMyYuyue() throws Exception{
 		String urlString = baseUrl+"face/userfront/deleteYuyue.do";
 		
-		String key = "bb049bf2df1ad5fac09cc52f";
+		String key = "fcd5848f3b42c7134cf6f48d";
     	String name = "13996237451"; 
     	
-    	String yuyueId = "55eff964d812a81a715613c7";
+    	String yuyueId = "55effc29d6c4591cdd01c515";
     	
     	JsonObject json = new JsonObject();
     	
@@ -1016,7 +1016,7 @@ public class Main {
 	public static String yuyue() throws  Exception{
 		String urlString = baseUrl+"face/userfront/yuyue.do";
 		
-		String key = "bb049bf2df1ad5fac09cc52f";
+		String key = "fcd5848f3b42c7134cf6f48d";
     	String name = "13996237451"; 
     	
     	JsonObject json = new JsonObject();
