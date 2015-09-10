@@ -1026,6 +1026,8 @@ public class Main {
     	
     	JsonObject json = new JsonObject();
     	
+    	json.addProperty("id", "55b9df60d6c45970c2eeab3d");
+    	
     	json.addProperty("yuyuePhone", "yuyuePhone");
 		json.addProperty("yuyueTime", "yuyueTime");
 		json.addProperty("tuijianrenPhone", "tuijianrenPhone");
@@ -1047,6 +1049,25 @@ public class Main {
 	 * @throws Exception
 	 */
 	public static String getMenchuangShuxing() throws Exception{
+		
+
+		String url = "baba/getPubByFenleiid.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		hp.addParemeter("fenleiid", "55f101bdd105fc1228077b11");
+		
+		
+		return hp.getResult();
+	}
+
+	/**
+	 * 通过门窗属性查询商品
+	 * @return
+	 * @throws Exception
+	 */
+	public static String queryProductByShuxing() throws Exception{
 		
 
 		String url = "baba/getPubByFenleiid.do";
