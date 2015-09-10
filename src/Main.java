@@ -1057,6 +1057,8 @@ public class Main {
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
 		hp.addParemeter("fenleiid", "55f101bdd105fc1228077b11");
+		hp.addParemeter("page", "1");
+		hp.addParemeter("pageSize", "5");
 		
 		
 		return hp.getResult();
@@ -1076,6 +1078,9 @@ public class Main {
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
 		hp.addParemeter("fenleiid", "55f101bdd105fc1228077b11");
+		hp.addParemeter("shuxing", "填写 首页获取门窗属性 返回的name");
+		hp.addParemeter("page", "1");
+		hp.addParemeter("pageSize", "5");
 		
 		
 		return hp.getResult();
