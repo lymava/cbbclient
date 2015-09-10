@@ -8,25 +8,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
 import com.sun.jersey.core.util.Base64;
 
 
 public class Main {
-//	public static final String baseUrl = "http://localhost:8080/chuang/";
-	public static final String baseUrl = "http://121.40.177.251:8810/";
+	public static final String baseUrl = "http://localhost:8080/chuang/";
+//	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
 	public static void main(String[] args) throws  Exception {
 		
 //		System.out.println(yuyue());
 		//加盟店获取自己的预约信息
-		System.out.println(getMyYuyue()); 
+//		System.out.println(getMyYuyue()); 
 //		/删除预约
 //		System.out.println(deleteMyYuyue());
 		//加盟店登录
 //		System.out.println(login());
-//		System.out.println(getShangpFenlei());
+		System.out.println(getShangpFenlei());
 //		System.out.println(getShangpin());
 //		System.out.println(getShangpinByid());
 //		System.out.println(getPubByid());
@@ -895,8 +897,9 @@ public class Main {
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
+		String result = hp.getResult();
 		
-		return hp.getResult();
+		return result;
 	}
 	/**
 	 * 根据分类id获取商品
@@ -1016,7 +1019,7 @@ public class Main {
 	public static String yuyue() throws  Exception{
 		String urlString = baseUrl+"face/userfront/yuyue.do";
 		
-		String key = "fcd5848f3b42c7134cf6f48d";
+		String key = "bb049bf2df1ad5fac09cc52f";
     	String name = "13996237451"; 
     	
     	JsonObject json = new JsonObject();
