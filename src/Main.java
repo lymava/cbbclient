@@ -28,7 +28,7 @@ public class Main {
 //		System.out.println(deleteMyYuyue());
 		//加盟店登录
 //		System.out.println(login());
-		System.out.println(getShangpFenlei());
+//		System.out.println(getShangpFenlei());
 //		System.out.println(getShangpin());
 //		System.out.println(getShangpinByid());
 //		System.out.println(getPubByid());
@@ -96,6 +96,8 @@ public class Main {
 //		System.out.println(userFabuchuang());
 		//我的创意列表
 //		System.out.println(chuangyilist());
+		//首页获取门窗属性
+		System.out.println(getMenchuangShuxing());
 	}
 //	/**
 //	 * 我的创意列表
@@ -1037,5 +1039,24 @@ public class Main {
 		
 		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
 		return request_data;
+	}
+	
+	/**
+	 * 首页获取门窗属性
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getMenchuangShuxing() throws Exception{
+		
+
+		String url = "baba/getPubByFenleiid.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		hp.addParemeter("fenleiid", "55f101bdd105fc1228077b11");
+		
+		
+		return hp.getResult();
 	}
 }
