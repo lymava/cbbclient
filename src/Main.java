@@ -831,7 +831,7 @@ public class Main {
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
-		hp.addParemeter("id", "55463490d105fc1e93208b16");
+		hp.addParemeter("id", "55a857b4d6c45940a7575414");
 		
 		
 		return hp.getResult();
@@ -1121,7 +1121,6 @@ public class Main {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(getAnliSearchPic());
-		System.out.println(getMenchuangSearchPic());
+		System.out.println(getShangpinByid());
 	}
 }
