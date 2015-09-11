@@ -1139,5 +1139,29 @@ public class Main {
 		
 		return hp.getResult();
 	} 
-	 
+	
+	/**
+	 * 通过案例属性查询商品
+	 * @return
+	 * @throws Exception
+	 */
+	public static String queryAnli() throws Exception{
+		
+
+		String url = "baba/findAnli.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+//		hp.addParemeter("fenleiid", "55f2a36ad812a831c9125ebf");
+		hp.addParemeter("shuxing", "简约风格");
+		hp.addParemeter("page", "1");
+		hp.addParemeter("pageSize", "5");
+		
+		
+		return hp.getResult();
+	}
+	 public static void main(String[] args) throws Exception {
+		System.out.println(queryAnli());
+	}
 }
