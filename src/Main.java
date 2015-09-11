@@ -1153,8 +1153,8 @@ public class Main {
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
-//		hp.addParemeter("fenleiid", "55f2a36ad812a831c9125ebf");
-		hp.addParemeter("shuxing", "简约风格");
+		hp.addParemeter("fenleiid", "55f2a36ad812a831c9125ebf");
+//		hp.addParemeter("shuxing", "简约风格");
 		hp.addParemeter("page", "1");
 		hp.addParemeter("pageSize", "5");
 		
@@ -1179,7 +1179,23 @@ public class Main {
 		
 		return hp.getResult();
 	}
+	/**
+	 * 获取案例的分类
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getAnliFenlei() throws Exception{
+		
+		String url = "baba/getAnliFenleiList.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		String result = hp.getResult();
+		
+		return result;
+	}
 	 public static void main(String[] args) throws Exception {
-		System.out.println(getAnliById());
+		System.out.println(getAnliFenlei());
 	}
 }
