@@ -19,7 +19,7 @@ public class Main {
 	public static final String baseUrl = "http://localhost:8080/chuang/";
 //	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
-	public static void main(String[] args) throws  Exception {
+//	public static void main(String[] args) throws  Exception {
 		
 //		System.out.println(yuyue());
 		//加盟店获取自己的预约信息
@@ -97,8 +97,8 @@ public class Main {
 		//我的创意列表
 //		System.out.println(chuangyilist());
 		//首页获取门窗属性
-		System.out.println(getMenchuangShuxing());
-	}
+//		System.out.println(getMenchuangShuxing());
+//	}
 //	/**
 //	 * 我的创意列表
 //	 * @return
@@ -1084,5 +1084,44 @@ public class Main {
 		
 		
 		return hp.getResult();
+	}
+	/**
+	 * 获取门窗搜索图片
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getMenchuangSearchPic() throws Exception{
+		
+		String url = "baba/getPubById.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		hp.addParemeter("id", "55f27723d812a81087eb9e21");
+		
+		
+		return hp.getResult();
+	}
+	
+	/**
+	 * 获取案例搜索图片
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getAnliSearchPic() throws Exception{
+		
+		String url = "baba/getPubById.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		hp.addParemeter("id", "55f2774bd812a81087eb9e24");
+		
+		return hp.getResult();
+	}
+	
+	public static void main(String[] args) throws Exception {
+		System.out.println(getAnliSearchPic());
+		System.out.println(getMenchuangSearchPic());
 	}
 }
