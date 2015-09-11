@@ -1077,8 +1077,7 @@ public class Main {
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
 		
-		hp.addParemeter("fenleiid", "55f101bdd105fc1228077b11");
-		hp.addParemeter("shuxing", "填写 首页获取门窗属性 返回的name");
+		hp.addParemeter("shuxing", "卧室门窗");
 		hp.addParemeter("page", "1");
 		hp.addParemeter("pageSize", "5");
 		
@@ -1120,7 +1119,25 @@ public class Main {
 		return hp.getResult();
 	}
 	
-	public static void main(String[] args) throws Exception {
-		System.out.println(getShangpinByid());
-	}
+	/**
+	 * 首页获取案例属性
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getAnliShuxing() throws Exception{
+		
+
+		String url = "baba/getPubByFenleiid.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		hp.addParemeter("fenleiid", "55f29682d812a8284be70ade");
+		hp.addParemeter("page", "1");
+		hp.addParemeter("pageSize", "5");
+		
+		
+		return hp.getResult();
+	} 
+	 
 }
