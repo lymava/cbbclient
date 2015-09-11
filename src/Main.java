@@ -1161,7 +1161,25 @@ public class Main {
 		
 		return hp.getResult();
 	}
+	/**
+	 * 通过ID查询案例
+	 * @return
+	 * @throws Exception
+	 */
+	public static String getAnliById() throws Exception{
+		
+
+		String url = "baba/getAnliById.do";
+		
+		
+		HttpPost hp = new HttpPost(new URL(baseUrl+url));
+		
+		hp.addParemeter("id", "55f2a694d812a833f84b3c01");
+		
+		
+		return hp.getResult();
+	}
 	 public static void main(String[] args) throws Exception {
-		System.out.println(queryAnli());
+		System.out.println(getAnliById());
 	}
 }
