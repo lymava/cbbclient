@@ -1072,7 +1072,7 @@ public class Main {
 	public static String queryProductByShuxing() throws Exception{
 		
 
-		String url = "baba/getPubByFenleiid.do";
+		String url = "baba/getProductListByFenleiId.do";
 		
 		
 		HttpPost hp = new HttpPost(new URL(baseUrl+url));
