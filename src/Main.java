@@ -16,7 +16,7 @@ import com.sun.jersey.core.util.Base64;
 
 
 public class Main {
-	public static final String baseUrl = "http://localhost:8080/chuang/";
+	public static final String baseUrl = "http://localhost:8080/chuangv2/";
 //	public static final String baseUrl = "http://121.40.177.251:8810/";
 	
 //	public static void main(String[] args) throws  Exception {
@@ -1195,7 +1195,62 @@ public class Main {
 		
 		return result;
 	}
-	 public static void main(String[] args) throws Exception {
-		System.out.println(getAnliFenlei());
-	}
+	 /**
+		 * 获取攻略的分类
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getGonglueFenlei() throws Exception{
+			
+			String url = "baba/getGonglueFenlei.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			String result = hp.getResult();
+			
+			return result;
+		}
+		
+//		public static final Integer tuijian_yes = 			1;
+//		public static final Integer tuijian_no = 			2;
+		/**
+		 * 获取推荐攻略
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getGonglueTuijian() throws Exception{
+			
+			String url = "baba/getPubByFenleiid.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+//			hp.addParemeter("fenleiid", "55482668d6c4591248857578");
+			hp.addParemeter("tuijian", tuijian_yes+"");
+			hp.addParemeter("page", "1");
+			hp.addParemeter("pageSize", "4");
+			
+			return hp.getResult();
+		}
+		/**
+		 * 获取攻略详情
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getGonglueByid() throws Exception{
+			
+			String url = "baba/getPubById.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("id", "55f3d0d9d812a81f62d53376");
+			
+			return hp.getResult();
+		}
+		
+		 public static void main(String[] args) throws Exception {
+				System.out.println(getGonglueTuijian());
+			}
 }
