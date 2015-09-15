@@ -1,37 +1,26 @@
 var format = {
-	"data" : [ {
-		"id" : "5540a44dd812a83f8eed3c86",
-		"name" : "门窗",
-		"child" : [ {
-			"id" : "5540a47ed812a83f8eed3c88",
-			"name" : "推拉门窗"
-		}, {
-			"id" : "5540a47ed812a83f8eed3c87",
-			"name" : "平开门窗"
-		}, {
-			"id" : "55482668d6c4591248857578",
-			"name" : "铝木复合门窗"
-		} ]
-	}, {
-		"id" : "5540a368d812a83f8eed3c7c",
-		"name" : "栏杆",
-		"child" : []
-	}, {
-		"id" : "5540a35cd812a83f8eed3c7b",
-		"name" : "阳光房",
-		"child" : []
-	}, {
-		"id" : "5540a357d812a83f8eed3c7a",
-		"name" : "豪华艺术门",
-		"child" : []
-	}, {
-		"id" : "5540a352d812a83f8eed3c79",
-		"name" : "六角亭",
-		"child" : []
-	}, {
-		"id" : "5540a34bd812a83f8eed3c78",
-		"name" : "葡萄架",
-		"child" : []
-	} ],
-	"state" : 2
-};
+	"_id" : {
+		"$oid" : "55f66577d105fc2e4efb8acf"
+	},
+	"a" : "4fa53290d3dc4820059e44ef",
+	"b" : "欧莱雅官方旗舰店彩妆正品 气垫BB霜美白保湿遮瑕强裸妆隔离cc霜",
+	"c" : "23号 淘金币价 仅此一天 送5件套 送完即止",
+	"d" : 1441865791000,
+	"f" : 1,
+	"g" : "使用常识",
+	"h" : "/attachFiles/temp/55f6655fd105fc2e4efb8aca",
+	"i" : [ "/attachFiles/temp/55f66562d105fc2e4efb8acb",
+			"/attachFiles/temp/55f66564d105fc2e4efb8acc",
+			"/attachFiles/temp/55f66566d105fc2e4efb8acd",
+			"/attachFiles/temp/55f66569d105fc2e4efb8ace" ],
+	"j" : "商品详情",
+	"k" : "55f65c16d105fc2d956fc5c4",
+	"l" : 1,
+	"m" : 2,
+	"n" : "",
+	"o2" : "5513b910d812a8327f224de5",
+	"priceFen" : 360,
+	"yuanjiaFen" : 390,
+	"startSaleTime" : 1442211384000,
+	"e" : 1
+}
