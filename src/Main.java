@@ -1249,8 +1249,90 @@ public class Main {
 			
 			return hp.getResult();
 		}
+		/**
+		 * 获取客服页banner
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getKefuBanner() throws Exception{
+			
+			String url = "baba/getPubById.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("id", "55f7b121d812a80d22d4586a");
+			
+			return hp.getResult();
+		}
+		/**
+		 * 服务和保障banner
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getFuwuBaozhangBanner() throws Exception{
+			
+			String url = "baba/getPubById.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("id", "55f7b131d812a80d22d4586b");
+			
+			return hp.getResult();
+		}
+		
+		/**
+		 * 获取客服电话
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getKefudianhuaList() throws Exception{
+			
+			String url = "baba/getPubByFenleiid.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("fenleiid", "55f79337d812a80d22d45864");
+			
+			return hp.getResult();
+		}
+		/**
+		 * 服务和保障 窗爸爸的子栏目
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getChuangbabaPubList() throws Exception{
+			
+			String url = "baba/getPubByFenleiid.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("fenleiid", "55f793b2d812a80d22d45866");
+			
+			return hp.getResult();
+		}
+		
+		/**
+		 * 服务和保障 信任和保障子项目
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getXingrenbaozhangPubList() throws Exception{
+			
+			String url = "baba/getPubByFenleiid.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("fenleiid", "55f793c0d812a80d22d45867");
+			
+			return hp.getResult();
+		}
 		
 		 public static void main(String[] args) throws Exception {
-				System.out.println(getGonglueTuijian());
+				System.out.println(getXingrenbaozhangPubList());
 			}
 }
