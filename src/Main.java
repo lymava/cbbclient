@@ -1332,7 +1332,40 @@ public class Main {
 			return hp.getResult();
 		}
 		
+		/**
+		 * 用户信息列表
+		 * @return
+		 * @throws Exception
+		 */
+		public static String messageList() throws  Exception{
+			String urlString = baseUrl+"face/userfront/messageList.do";
+			
+			String key = "13aeec8ab69df2d2fbdcc7b5";
+	    	String name = "13996237451"; 
+	    	
+	    	JsonObject json = new JsonObject();
+			
+			String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+			return request_data;
+		}
+		/**
+		 * 用户首页 信息 收藏数 和未查看的信息数量
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getUserIndexInfo() throws  Exception{
+			String urlString = baseUrl+"face/userfront/getUserIndexInfo.do";
+			
+			String key = "13aeec8ab69df2d2fbdcc7b5";
+	    	String name = "13996237451"; 
+	    	
+	    	JsonObject json = new JsonObject();
+			
+			String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+			return request_data;
+		}
+		
 		 public static void main(String[] args) throws Exception {
-				System.out.println(getXingrenbaozhangPubList());
+				System.out.println(getUserIndexInfo());
 			}
 }
