@@ -1340,8 +1340,8 @@ public class Main {
 		public static String messageList() throws  Exception{
 			String urlString = baseUrl+"face/userfront/messageList.do";
 			
-			String key = "13aeec8ab69df2d2fbdcc7b5";
-	    	String name = "13996237451"; 
+			String key = "d5f34b7136bda033bd80eeb7";
+	    	String name = "18983261955"; 
 	    	
 	    	JsonObject json = new JsonObject();
 			
@@ -1356,8 +1356,8 @@ public class Main {
 		public static String getUserIndexInfo() throws  Exception{
 			String urlString = baseUrl+"face/userfront/getUserIndexInfo.do";
 			
-			String key = "13aeec8ab69df2d2fbdcc7b5";
-	    	String name = "13996237451"; 
+			String key = "d5f34b7136bda033bd80eeb7";
+	    	String name = "18983261955"; 
 	    	
 	    	JsonObject json = new JsonObject();
 			
@@ -1365,7 +1365,25 @@ public class Main {
 			return request_data;
 		}
 		
+		/**
+		 * 通过关键字查询商品
+		 * @return
+		 * @throws Exception
+		 */
+		public static String queryProductBySearchKey() throws Exception{
+
+			String url = "baba/getProductListByFenleiId.do";
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("searchKey", "神奇的门窗");
+			hp.addParemeter("page", "1");
+			hp.addParemeter("pageSize", "5");
+			
+			return hp.getResult();
+		}
+		
 		 public static void main(String[] args) throws Exception {
-				System.out.println(getUserIndexInfo());
+				System.out.println(messageList());
 			}
 }
