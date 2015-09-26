@@ -293,14 +293,12 @@ public class Main {
 	private static String resetPasswd() throws Exception {
 		String urlString = baseUrl+"face/userfront/resetPasswd.do";
 		
-		//用户密钥
-		String key = "633bd1f8db6fd7247249db5b";
-		//用户名
-    	String name = "13896059237"; 
+		String key = "13aeec8ab69df2d2fbdcc7b5";
+    	String name = "13996237451"; 
     	
     	JsonObject json = new JsonObject();
     	//文章 或产品ID
-    	json.addProperty("oldpwd", Md5Util.MD5Normal("123456"));
+    	json.addProperty("oldpwd", Md5Util.MD5Normal("1234561321321"));
     	json.addProperty("newpwd", "1234561");
     	
 		
@@ -1376,14 +1374,30 @@ public class Main {
 			
 			HttpPost hp = new HttpPost(new URL(baseUrl+url));
 			
-			hp.addParemeter("searchKey", "神奇的门窗");
+			hp.addParemeter("searchKey", "80-126");
 			hp.addParemeter("page", "1");
 			hp.addParemeter("pageSize", "5");
 			
 			return hp.getResult();
 		}
+		/**
+		 * 分享转发统计
+		 * @return
+		 * @throws Exception
+		 */
+		public static String shareCount() throws Exception{
+
+			String url = "baba/shareCount.do";
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("pubId", "55f2a694d812a833f84b3c01");
+			
+			return hp.getResult();
+		}
 		
 		 public static void main(String[] args) throws Exception {
-				System.out.println(messageList());
+			 System.out.println(shareCount());
+				System.out.println(getAnliById());
 			}
 }
