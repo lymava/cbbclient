@@ -60,6 +60,7 @@ public class HttpPost{
     	openConnection =  url.openConnection();
     	openConnection.setDoOutput(true); 
     	openConnection.setDoInput(true); 
+    	
     	openConnection.setConnectTimeout(10000); 
     	openConnection.setReadTimeout(10000); 
 	}
