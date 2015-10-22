@@ -45,6 +45,7 @@ public class BaseWebMain {
 	    	hp.addParemeter("encrpt", "enAes");
 	    	hp.addParemeter("isEncryption",isEncryption.toString());
 	    	hp.addParemeter("mode",client_type_json+"");
+//	    	hp.addParemeter("base64","true");
 			
 	    	hp.addParemeter("data", json);
 	    	String mac = Md5Util.MD5Normal(tempKey+name+ json);

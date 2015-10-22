@@ -1,79 +1,34 @@
 var format = {
 	"data" : [ {
-		"id" : "55fbdf26d105fc3bac4b0622",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570022000"
+		"id" : "56245277d6c4594ea00de1be",
+		"name" : "设计是一种沟通是一种协调",
+		"pubConlumnName" : "装修设计",
+		"pic" : "attachFiles/temp/5625ac5fd6c4594ea00de1f2",
+		"viewcount" : "6",
+		"time" : "1445220983000"
 	}, {
-		"id" : "55fbdf26d105fc3bac4b0621",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570022000"
+		"id" : "5609044cd6c4595f8b8a1a93",
+		"name" : "不一样的选择不一样的享受",
+		"pubConlumnName" : "装修设计",
+		"pic" : "attachFiles/temp/5625adb0d6c4594ea00de1f4",
+		"viewcount" : "4",
+		"time" : "1443431500000"
 	}, {
-		"id" : "55fbdf26d105fc3bac4b0620",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570022000"
+		"id" : "560a55b8d6c4595f8b8a1b63",
+		"name" : "一篇室内设计不可不读的文章",
+		"pubConlumnName" : "装修设计",
+		"pic" : "attachFiles/temp/5625ae4cd6c4594ea00de1f5",
+		"viewcount" : "3",
+		"time" : "1443517880000"
 	}, {
-		"id" : "55fbdf26d105fc3bac4b061f",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570022000"
-	}, {
-		"id" : "55fbdf26d105fc3bac4b061e",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570022000"
-	}, {
-		"id" : "55fbdf25d105fc3bac4b061d",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570021000"
-	}, {
-		"id" : "55fbdf1fd105fc3bac4b061c",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570015000"
-	}, {
-		"id" : "55fbdf1fd105fc3bac4b061b",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570015000"
-	}, {
-		"id" : "55fbdf1fd105fc3bac4b061a",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570015000"
-	}, {
-		"id" : "55fbdf1fd105fc3bac4b0619",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570015000"
-	}, {
-		"id" : "55fbdf1fd105fc3bac4b0618",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570015000"
-	}, {
-		"id" : "55fbdf1fd105fc3bac4b0617",
-		"name" : "系统消息",
-		"content" : "gfdiasohgiosa;hgdsklahfjdisahgudfhsgfdsuhafdjsa",
-		"state" : "3",
-		"time" : "1442570015000"
+		"id" : "560a3591d6c4595f8b8a1b01",
+		"name" : "客厅搭配风水讲究",
+		"pubConlumnName" : "装修设计",
+		"pic" : "attachFiles/temp/5625aefad6c4594ea00de1f6",
+		"viewcount" : "3",
+		"time" : "1443509649000"
 	} ],
-	"count" : 12,
-	"lastpage" : 1,
-	"state" : 2,
-	"description" : "查询成功"
+	"count" : "11",
+	"lastpage" : "3",
+	"state" : "2"
 }
