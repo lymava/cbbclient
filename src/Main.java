@@ -1426,12 +1426,7 @@ public class Main {
 //			 System.out.println(shareCount());
 //				System.out.println(getAnliById());
 			 
-//			 System.out.println(Md5Util.MD5Normal("2f55d7f38d50187f2419b90365fbd93f15826009415123"));
-//			 System.out.println(URLDecoder.decode("%E9%87%8D"));
-//			 System.out.println(Arrays.toString("é".getBytes()));
-//			 System.out.println(Arrays.toString("重".getBytes()));
 //			 System.out.println(2);
-//			 System.out.println(Byte.MAX_VALUE);
 //			 System.out.println(yuyue());
 //			 System.out.println( getGonglueTuijian() );
 //			 System.out.println(shoucang());
