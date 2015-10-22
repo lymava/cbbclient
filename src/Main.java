@@ -4,8 +4,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import jdk.nashorn.internal.runtime.FindProperty;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -17,7 +21,7 @@ import com.sun.jersey.core.util.Base64;
 
 public class Main {
 	public static final String baseUrl = "http://localhost:8080/chuangv2/";
-//	public static final String baseUrl = "http://121.40.177.251:8810/";
+//	public static final String baseUrl = "http://121.40.177.251:8910/";
 	
 //	public static void main(String[] args) throws  Exception {
 		
@@ -312,15 +316,13 @@ public class Main {
 	 */
 	private static String shoucang() throws Exception {
 		String urlString = baseUrl+"face/userfront/shoucang.do";
-		
-		//用户密钥
-		String key = "633bd1f8db6fd7247249db5b";
-		//用户名
-    	String name = "13896059237"; 
+    	
+    	String name = "13996237451";
+		String key = "13aeec8ab69df2d2fbdcc7b5";
     	
     	JsonObject json = new JsonObject();
     	//文章 或产品ID
-    	json.addProperty("pubId", "55463490d105fc1e93208b16");
+    	json.addProperty("pubId", "561f4cc9d6c4592d6cdd1195");
     	json.addProperty("memo", "备注1");
     	
     	
@@ -336,14 +338,12 @@ public class Main {
 	private static String shoucang_quxiao() throws Exception {
 		String urlString = baseUrl+"face/userfront/shoucang_quxiao.do";
 		
-		//用户密钥
-				String key = "633bd1f8db6fd7247249db5b";
-				//用户名
-		    	String name = "13896059237"; 
+		String name = "13996237451";
+		String key = "13aeec8ab69df2d2fbdcc7b5";
     	
     	JsonObject json = new JsonObject();
     	//文章 或产品ID
-    	json.addProperty("pubId", "55463490d105fc1e93208b16");
+    	json.addProperty("pubId", "561f4cc9d6c4592d6cdd1195");
 		
 		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
 		return request_data;
@@ -755,7 +755,7 @@ public class Main {
 		
 		Map<String, String> cookies = new HashMap<String, String>();
 		hp.setCookies(cookies);
-		hp.addParemeter("username", "189083970");
+		hp.addParemeter("username", "18908397910");
 		
 		String result = hp.getResult();
 		System.out.println(cookies);
@@ -1004,9 +1004,13 @@ public class Main {
 //		
 //		hp.setCookies(cookies);
 		
+		String pwd_change = "123456";
+		
 			hp.addParemeter("username", "新美鱼");
 			hp.addParemeter("rand",rand);
 			hp.addParemeter("pwd", Md5Util.MD5Normal(Md5Util.MD5Normal(pwd) +rand));
+			
+			hp.addParemeter("pwd_change", pwd_change);
 		
 		return hp.getResult();
 	}
@@ -1019,7 +1023,7 @@ public class Main {
 	public static String yuyue() throws  Exception{
 		String urlString = baseUrl+"face/userfront/yuyue.do";
 		
-		String key = "bb049bf2df1ad5fac09cc52f";
+		String key = "13aeec8ab69df2d2fbdcc7b5";
     	String name = "13996237451"; 
     	
     	JsonObject json = new JsonObject();
@@ -1035,9 +1039,12 @@ public class Main {
 		json.addProperty("message", "message");
 		json.addProperty("name", "name");
 		json.addProperty("orderId", (System.currentTimeMillis()+"").substring(1));
+		
+		String string = new String(Base64.encode(json.toString()));
+		
     	
 		
-		String request_data =	BaseWebMain.request_data(urlString, key, name,json.toString());
+		String request_data =	BaseWebMain.request_data(urlString, key, name,string);
 		return request_data;
 	}
 	
@@ -1224,10 +1231,11 @@ public class Main {
 			
 			HttpPost hp = new HttpPost(new URL(baseUrl+url));
 			
-//			hp.addParemeter("fenleiid", "55482668d6c4591248857578");
-			hp.addParemeter("tuijian", tuijian_yes+"");
+			hp.addParemeter("fenleiid", "55f3d0bed812a81f62d53373");
+//			hp.addParemeter("tuijian", tuijian_yes+"");
 			hp.addParemeter("page", "1");
 			hp.addParemeter("pageSize", "4");
+			
 			
 			return hp.getResult();
 		}
@@ -1374,7 +1382,7 @@ public class Main {
 			
 			HttpPost hp = new HttpPost(new URL(baseUrl+url));
 			
-			hp.addParemeter("searchKey", "80-126");
+//			hp.addParemeter("searchKey", "80-126");
 			hp.addParemeter("page", "1");
 			hp.addParemeter("pageSize", "5");
 			
@@ -1391,13 +1399,69 @@ public class Main {
 			
 			HttpPost hp = new HttpPost(new URL(baseUrl+url));
 			
-			hp.addParemeter("pubId", "55f2a694d812a833f84b3c01");
+			hp.addParemeter("pubId", "56245277d6c4594ea00de1be");
+			
+			return hp.getResult();
+		}
+		
+		/**
+		 * 获取二维码
+		 * @return
+		 * @throws Exception
+		 */
+		public static String getErweiMa() throws Exception{
+
+			String url = "baba/getPubById.do";
+			
+			
+			HttpPost hp = new HttpPost(new URL(baseUrl+url));
+			
+			hp.addParemeter("id", "56285f6dd812a80be69733f9");
+			
 			
 			return hp.getResult();
 		}
 		
 		 public static void main(String[] args) throws Exception {
-			 System.out.println(shareCount());
-				System.out.println(getAnliById());
+//			 System.out.println(shareCount());
+//				System.out.println(getAnliById());
+			 
+//			 System.out.println(Md5Util.MD5Normal("2f55d7f38d50187f2419b90365fbd93f15826009415123"));
+//			 System.out.println(URLDecoder.decode("%E9%87%8D"));
+//			 System.out.println(Arrays.toString("é".getBytes()));
+//			 System.out.println(Arrays.toString("重".getBytes()));
+//			 System.out.println(2);
+//			 System.out.println(Byte.MAX_VALUE);
+//			 System.out.println(yuyue());
+//			 System.out.println( getGonglueTuijian() );
+//			 System.out.println(shoucang());
+//			 
+//			 System.out.println(queryProductBySearchKey());
+//			 
+//			 System.out.println(shoucang_quxiao());
+//			 
+//			 System.out.println(queryProductBySearchKey());
+//			 System.out.println(getErweiMa());
+			 
+			 
+//			 byte[] bytes = "重".getBytes();
+//			 for (byte b : bytes) {
+//				System.out.println(b);
+//			}
+////			 -23
+////			 -121
+////			 -115
+//			 byte[] chong = {123, 10, 32, 32, 34, 111, 114, 100, 101, 114, 73, 100, 34, 32, 58, 32, 34, 49, 52, 52, 52, 57, 56, 54, 50, 52, 54, 34, 44, 10, 32, 32, 34, 115, 104, 105, 34, 32, 58, 32, 34, 98, 34, 44, 10, 32, 32, 34, 112, 114, 111, 100, 117, 99, 116, 73, 100, 34, 32, 58, 32, 34, 53, 54, 48, 98, 55, 98, 55, 50, 100, 54, 99, 52, 53, 57, 53, 102, 56, 98, 56, 97, 49, 98, 98, 52, 34, 44, 10, 32, 32, 34, 121, 117, 121, 117, 101, 84, 105, 109, 101, 34, 32, 58, 32, 34, 49, 52, 52, 52, 57, 56, 54, 50, 52, 54, 34, 44, 10, 32, 32, 34, 115, 104, 101, 110, 103, 34, 32, 58, 32, 34, 97, 34, 44, 10, 32, 32, 34, 109, 101, 115, 115, 97, 103, 101, 34, 32, 58, 32, 34, -61, -87, -62, -121, -62, -115, 34, 44, 10, 32, 32, 34, 107, 101, 121, 34, 32, 58, 32, 34, 51, 98, 48, 98, 48, 57, 56, 99, 102, 52, 52, 97, 49, 54, 102, 99, 53, 55, 102, 102, 99, 54, 102, 98, 34, 44, 10, 32, 32, 34, 121, 117, 121, 117, 101, 80, 104, 111, 110, 101, 34, 32, 58, 32, 34, 54, 54, 54, 34, 10, 125};
+//			 byte[] newstr = { -61, -87, -62, -121, -62, -115};
+//			 
+//			 System.out.println(new String(newstr,"GBK"));
+//			 System.out.println(new String(chong));
+//			 System.out.println(256-23);
+//			 System.out.println(0x87);
+//			 System.out.println(0x8d);
+			 
+//			 mac:2f55d7f38d50187f2419b90365fbd93f15826009415123 加密后：f430cc2dc5b9c341bf08de4a4d7bf6bc 
+				
+//				System.out.println(getMyYuyue());
 			}
 }

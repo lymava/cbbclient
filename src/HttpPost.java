@@ -80,6 +80,17 @@ public class HttpPost{
 	 * @throws IOException 获取结果报错
 	 */
 	public String getResult() throws IOException {
+		
+		String login_name = "13996237451";
+		String key = "13aeec8ab69df2d2fbdcc7b5";
+		String login_rand = ""+System.currentTimeMillis();
+		
+		String login_mac = Md5Util.MD5Normal(key+login_rand);
+		
+		this.addParemeter("login_name", login_name);
+		this.addParemeter("login_rand", login_rand);
+		this.addParemeter("login_mac", login_mac);
+		
 		OutputStreamWriter outputStream = null;
 		InputStream inputStream = null;
 		ByteArrayOutputStream outByteArray = new ByteArrayOutputStream();
